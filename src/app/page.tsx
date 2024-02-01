@@ -62,9 +62,20 @@ export default function Home() {
               </p>
             </EventWork>
           </div>
+          <div>Rede sociais</div>
         </div>
+        <div className="w-1/2">
+          <div className="w-11/12">
+            <ProjectCard
+              title="UserSystem"
+              description="O projeta abrange todas as etapas do processo de autenticação, desde o registro até a recuperação de senha via e-mail. No desenvolvimento foram aplicados conceitos de segurança, destacando-se a encriptação de dados sensíveis."
+              imgScreenshot={UserSystemScreen}
+              link="https://usersystem-web-app-p2bi.vercel.app/"
+              technologies={['React', 'Node', 'MongoDB']}
+            />
+          </div>
 
-      </div>
+        </div>
     </main >
   );
 }

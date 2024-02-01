@@ -16,6 +16,11 @@ body {
   }
 }
 
+.img {
+  width: 97.6px;
+  height: 56.3px;
+}
+
 .border-width {
   border-width: 0.2px;
 }
