@@ -15,3 +15,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.border-width {
+  border-width: 0.2px;
+}
