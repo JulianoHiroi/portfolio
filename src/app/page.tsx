@@ -11,6 +11,8 @@ import ButtonHoverBar from "../components/buttonHoverBar";
 import Link from "next/link";
 import DateCalender from "@/components/DateCalender";
 import EventWork from "@/components/eventWork";
+import ProjectCard from "@/components/projectCard";
+import UserSystemScreen from "@/assets/usersystem_tela.png"
 //
 const inconsolata = Inconsolata({ subsets: ["latin"], weight: "700" });
 //
