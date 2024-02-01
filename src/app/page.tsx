@@ -12,7 +12,7 @@ import Link from "next/link";
 import DateCalender from "@/components/DateCalender";
 import EventWork from "@/components/eventWork";
 import ProjectCard from "@/components/projectCard";
-import UserSystemScreen from "@/assets/usersystem_tela.png"
+import UserSystemScreen from '@/assets/usersystem_tela.png'
 //
 const inconsolata = Inconsolata({ subsets: ["latin"], weight: "700" });
 //
@@ -63,21 +63,16 @@ export default function Home() {
                 Durante o estágio obrigatório para minha formação em técnico em eletrônica, desempenhei diversas atividades voltadas para a manutenção de rastreadores. Minhas responsabilidades incluíam a realização de testes e cadastros desses dispositivos, bem como a manutenção e criação de planilhas. Além disso, assumi a gestão e organização do estoque de produtos e ferramentas.
               </p>
             </EventWork>
-          </div>
-          <div>Rede sociais</div>
-        </div>
-        <div className="w-1/2">
-          <div className="w-11/12">
             <ProjectCard
-              title="UserSystem"
-              description="O projeta abrange todas as etapas do processo de autenticação, desde o registro até a recuperação de senha via e-mail. No desenvolvimento foram aplicados conceitos de segurança, destacando-se a encriptação de dados sensíveis."
-              imgScreenshot={UserSystemScreen}
-              link="https://usersystem-web-app-p2bi.vercel.app/"
-              technologies={['React', 'Node', 'MongoDB']}
-            />
+            title="UserSystem"
+            description="O projeta abrange todas as etapas do processo de autenticação, desde o registro até a recuperação de senha via e-mail. No desenvolvimento foram aplicados conceitos de segurança, destacando-se a encriptação de dados sensíveis."
+            imgScreenshot={UserSystemScreen}
+            link="https://usersystem-web-app-p2bi.vercel.app/"
+            technologies={['React', 'Node', 'MongoDB']}
+          />
           </div>
-
         </div>
+      </div>
     </main >
   );
 }
