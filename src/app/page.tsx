@@ -7,9 +7,7 @@ import UserSystemScreen from '../assets/usersystem_tela.png'
 const inconsolata = Inconsolata({ subsets: ['latin'] })
 export default function Home() {
   return (
-    <main
-      className={inconsolata.className + ' flex h-screen w-full items-center'}
-    >
+    <main className={' flex h-screen w-full items-center'}>
       <div className="flex h-3/4 w-1/2 flex-col items-center justify-start space-y-5 pl-20">
         <Image
           src={FotoPerfil}
@@ -43,6 +41,7 @@ export default function Home() {
             description="O projeta abrange todas as etapas do processo de autenticação, desde o registro até a recuperação de senha via e-mail. No desenvolvimento foram aplicados conceitos de segurança, destacando-se a encriptação de dados sensíveis."
             imgScreenshot={UserSystemScreen}
             link="https://usersystem-web-app-p2bi.vercel.app/"
+            technologies={['React', 'Node', 'MongoDB']}
           />
         </div>
       </div>

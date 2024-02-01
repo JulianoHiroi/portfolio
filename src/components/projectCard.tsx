@@ -1,7 +1,7 @@
 'use client'
 
 import Image, { StaticImageData } from 'next/image'
-
+import '../app/globals.css'
 type ProjectCardProps = {
   title: string
   description: string
@@ -15,6 +15,7 @@ export default function ProjectCard({
   description,
   link,
   imgScreenshot,
+  technologies,
 }: ProjectCardProps) {
   const handleOnClick = () => {
     console.log('clicked')
@@ -22,16 +23,23 @@ export default function ProjectCard({
   return (
     <div
       onClick={handleOnClick}
-      className="flex w-full space-x-3 rounded-lg border border-transparent  p-5 hover:border-white"
+      className="lg:blocks flex w-11/12 cursor-pointer  space-x-3 rounded-md p-5 hover:bg-gray-800 hover:bg-opacity-40 hover:shadow-lg"
     >
       <Image
-        className="h-36  rounded-lg"
+        className="img mr-3 rounded-lg"
         src={imgScreenshot}
         alt={description}
       />
       <div className="flex flex-col">
-        <h1 className="mb-4 ml-4 text-2xl">{title}</h1>
-        <p className="text-justify">{description}</p>
+        <h1 className="mb-4 text-2xl font-bold">{title}</h1>
+        <p>{description}</p>
+        <div className="mt-3 flex">
+          {technologies?.map((tech) => (
+            <p key={tech} className="m-1 rounded-md bg-gray-800 p-1 text-white">
+              {tech}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   )
