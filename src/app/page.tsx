@@ -20,12 +20,18 @@ const inter = Inter({ subsets: ['latin'], weight: '500' })
 const interTitle = Inter({ subsets: ['latin'], weight: '700' })
 
 export default function Home() {
-  const handleOnSelectSubjet = () => {
-    console.log('teste')
+  function scrollToSection(sectionId : string) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
   }
+
+
+
   return (
     <main className={inter.className + ' flex h-screen w-full items-center '}>
-      <div className="flex h-3/4 w-1/2 flex-col items-center justify-start space-y-5 pl-32">
+      <div className="flex h-3/4 w-1/2 flex-col items-center justify-start space-y-5 pl-32 ">
         <Image
           src={FotoPerfil}
           width={150}
@@ -49,24 +55,25 @@ export default function Home() {
             </p>
           </div>
           <div className="flex items-center space-x-5 text-xl">
+          
             <ButtonHoverBar
-              HandleOnClick={handleOnSelectSubjet}
-              text="Experiência"
+              scrollToSection={scrollToSection}
+              text="Sobre Mim"
+              id='Sobre'
             />{' '}
             <div className="h-2 w-2 rounded-full bg-white"></div>
-            <button
-              onClick={handleOnSelectSubjet}
-              className="hover:text-gray-600"
-            >
-              Projetos
-            </button>{' '}
+            <ButtonHoverBar
+              scrollToSection={scrollToSection}
+              text="Experiência"
+              id='Experiência'
+            />{' '}
             <div className="h-2 w-2 rounded-full bg-white"></div>
-            <button
-              onClick={handleOnSelectSubjet}
-              className="hover:text-gray-600"
-            >
-              Sobre mim
-            </button>
+            <ButtonHoverBar
+              scrollToSection={scrollToSection}
+              text="Projetos"
+              id='Projetos'
+            />{' '}
+            
           </div>
           <div className="mt-10 flex space-x-10">
             <Link href="https://github.com/JulianoHiroi">
@@ -97,7 +104,16 @@ export default function Home() {
         </div>
       </div>
       <div className="scrollable h-screen w-1/2  overflow-hidden overflow-y-auto overflow-x-hidden">
-        <h1 className="mb-10 mt-10 pl-36 text-4xl">Experiência</h1>
+        <div className='pt-32' id='Sobre'>
+          <p className='about-text  indent-8'  >
+            Olá, eu sou Juliano Hiroi, um desenvolvedor web full stack. Atualmente
+            estou cursando Sistemas de Informação na Universidade Tecnologica Federal do Paraná. Meu interesse por programação começou em 2019, quando
+            comecei a estudar <b>Python</b> e <b>Arduino</b>. Desde então, venho
+            estudando e me aprimorando em diversas áreas da programação, como
+            <b>desenvolvimento web</b>, <b>eletrônica</b> e <b>automação</b>.
+          </p>
+        </div>
+        <h1 className="mb-10 pt-10 pl-36 text-4xl" id = "Experiência">Experiência</h1>
         <div className="flex  flex-col space-y-10">
           <EventWork
             title="Nosso Olhar Solidário"
@@ -170,7 +186,7 @@ export default function Home() {
           </EventWork>
         </div>
         <div>
-          <h1 className=" mb-5 mt-10 pl-36 text-4xl">Projetos</h1>
+          <h1 className=" mb-5 pt-10 pl-36 text-4xl" id='Projetos'>Projetos</h1>
           <ProjectCard
             title="UserSystem"
             imgScreenshot={UserSystemScreen}
@@ -217,7 +233,11 @@ export default function Home() {
               no meu percurso como <b>desenvolvedor web</b>.
             </p>
           </ProjectCard>
+
         </div>
+        <p className="h-20 w-5/6 text-sm text-gray-600 mt-10 indent-8">
+            Esse Portfólio foi construído com <b className='text-gray-400'>NextJs</b> e <b className='text-gray-400'>TailwindCSS</b>. O seu layout foi inspirado no projeto{' '}de <a href="https://brittanychiang.com/" target="_blank" className="text-blue-600" rel="noreferrer"> Brittaney Chiang</a>. Foi codificado usando <b className='text-gray-400'>Visual Studio Code</b>. 
+        </p>
       </div>
     </main>
   )

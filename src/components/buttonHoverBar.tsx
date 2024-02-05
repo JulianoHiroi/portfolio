@@ -1,15 +1,25 @@
+import "../app/globals.css"
+
 type ButtonHoverBarProps = {
   text: string
-  HandleOnClick: () => void
+  id: string
+  scrollToSection: (id: string) => void
 }
 
 export default function ButtonHoverBar({
   text,
-  HandleOnClick,
+  scrollToSection,
+  id,
 }: ButtonHoverBarProps) {
+
+  const HandleOnClick = () => {
+    scrollToSection(id)
+  }
+
   return (
-    <div>
-      <button onClick={HandleOnClick}>{text}</button>
-    </div>
+    <div className="button-bar">
+    <button onClick={HandleOnClick} className="">{text}</button>
+    <span className="button-bar-span"></span>
+  </div>
   )
 }

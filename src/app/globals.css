@@ -1,11 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Importe uma a fonte Inter e coloque h1 e h2 com essa fonte com weight 700 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:xxxx@xxxxxxxxxxxxxxxx');
-h1, h2 {
+
+
+h1{
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
+  color: rgb(244, 232, 232);
+  letter-spacing: 0.2px;
+
+} 
+
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
   color: rgb(244, 232, 232);
 }
 h3{
@@ -13,11 +21,12 @@ h3{
   font-size: 18px;
 }
 b{
-  font-weight: 700;
-  text-decoration: double;
+  font-weight: 600;
   color: rgb(218, 218, 218)
 }
-
+p{
+  font-size: 15px;
+}
 body {
   background-color: rgb(2, 0, 5);
   color: rgb(255, 255, 255);
@@ -44,6 +53,7 @@ body {
 .scrollable {
   overflow: auto;
   width: 48%;
+  max-width: 600px;
 }
 
 /* Estilo para o Webkit (Chrome, Safari) */
@@ -68,4 +78,33 @@ body {
 
 *::-webkit-scrollbar-thumb {
   background-color: transparent; /* ou a cor desejada */
+}
+
+.about-text{
+  font-size: 18px;
+  font-weight: 200;
+  color: rgb(167, 167, 167);
+  letter-spacing: 0.4px;
+
+}
+
+
+.button-bar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button-bar-span {
+  height: 2px;
+  background: white;
+  width: 0px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  overflow: hidden;
+}
+
+.button-bar:hover .button-bar-span {
+  width: 100%;
 }
