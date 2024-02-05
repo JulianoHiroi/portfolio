@@ -53,9 +53,12 @@ body {
 .scrollable {
   overflow: auto;
   width: 48%;
-  max-width: 600px;
-}
 
+}
+.divMaster {
+  max-width: 600px;
+  width: 100%;
+}
 /* Estilo para o Webkit (Chrome, Safari) */
 ::-webkit-scrollbar {
   width: 0.5em;

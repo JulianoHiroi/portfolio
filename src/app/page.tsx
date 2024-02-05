@@ -46,15 +46,14 @@ export default function Home() {
             Juliano Hiroi
           </h1>
           <div className="mb-12">
-            <h2 className=" mb-5 mt-5 w-full text-xl font-bold tracking-tight">
+            <h2 className=" mb-5 mt-5 w-full text-2xl font-bold tracking-tight">
               Desenvolvedor Full Stack Web
             </h2>
-            <p className="w-3/5">
-              Aqui deve ser colocado uma descrição básica sobre o que você
-              procura ou u
+            <p className="w-4/5 text-lg text-gray-500">
+              Desenvolvo sites e aplicações web com foco em <b>usabilidade</b> e{' '} <b>performance</b>. Estou sempre em busca de novos desafios e oportunidades para aprimorar minhas habilidades.
             </p>
           </div>
-          <div className="flex items-center space-x-5 text-xl">
+          <div className="flex items-center space-x-5 text-xl mt-5">
           
             <ButtonHoverBar
               scrollToSection={scrollToSection}
@@ -104,13 +103,11 @@ export default function Home() {
         </div>
       </div>
       <div className="scrollable h-screen w-1/2  overflow-hidden overflow-y-auto overflow-x-hidden">
-        <div className='pt-32' id='Sobre'>
+        <div className='divMaster'>
+        <div className='pt-24' id='Sobre'>
           <p className='about-text  indent-8'  >
             Olá, eu sou Juliano Hiroi, um desenvolvedor web full stack. Atualmente
-            estou cursando Sistemas de Informação na Universidade Tecnologica Federal do Paraná. Meu interesse por programação começou em 2019, quando
-            comecei a estudar <b>Python</b> e <b>Arduino</b>. Desde então, venho
-            estudando e me aprimorando em diversas áreas da programação, como
-            <b>desenvolvimento web</b>, <b>eletrônica</b> e <b>automação</b>.
+            estou cursando Sistemas de Informação na Universidade Tecnologica Federal do Paraná. Meu interesse por programação começou em 2019, quando comecei a estudar <b>Linguagem C</b> em uma máteria do técnico em Eletrônica. Desde então, me apaixonei pela área e busco me aprimorar mnas diversas áreas de programação.
           </p>
         </div>
         <h1 className="mb-10 pt-10 pl-36 text-4xl" id = "Experiência">Experiência</h1>
@@ -238,6 +235,7 @@ export default function Home() {
         <p className="h-20 w-5/6 text-sm text-gray-600 mt-10 indent-8">
             Esse Portfólio foi construído com <b className='text-gray-400'>NextJs</b> e <b className='text-gray-400'>TailwindCSS</b>. O seu layout foi inspirado no projeto{' '}de <a href="https://brittanychiang.com/" target="_blank" className="text-blue-600" rel="noreferrer"> Brittaney Chiang</a>. Foi codificado usando <b className='text-gray-400'>Visual Studio Code</b>. 
         </p>
+      </div>
       </div>
     </main>
   )
