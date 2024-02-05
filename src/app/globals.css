@@ -80,6 +80,19 @@ body {
   background-color: transparent; /* ou a cor desejada */
 }
 
+.boardProject:hover .titleProject {
+  color: rgb(130, 144, 236);
+}
+.boardProject:hover .iconProject {
+  animation: moveUpRight 0.3s forwards;
+}
+
+@keyframes moveUpRight {
+  to {
+    transform: translate(5px, -5px);
+  }
+}
+
 .about-text{
   font-size: 18px;
   font-weight: 200;

@@ -2,6 +2,7 @@
 
 import Image, { StaticImageData } from 'next/image'
 import '../app/globals.css'
+import IconFoward from './iconFoward'
 
 type ProjectCardProps = {
   title: string
@@ -24,11 +25,16 @@ export default function ProjectCard({
   return (
     <div
       onClick={handleOnClick}
-      className="lg:blocks flex w-full cursor-pointer  space-x-3 rounded-md p-5 hover:bg-gray-800 hover:bg-opacity-40 hover:shadow-lg"
+      className="lg:blocks flex w-full cursor-pointer  space-x-3 rounded-md p-5 hover:bg-gray-800 hover:bg-opacity-40 "
     >
       <Image className="img mr-3 rounded-lg" src={imgScreenshot} alt={link} />
-      <div className="flex flex-col">
-        <h2 className="mb-4 text-2xl">{title}</h2>
+      <div className="boardProject flex flex-col">
+        <div className="relative flex w-fit">
+          <h2 className="titleProject mb-4 text-2xl">{title}</h2>
+          <div className="iconProject op-0 absolute -right-7">
+            <IconFoward />
+          </div>
+        </div>
         {children}
         <li className="mt-2 flex flex-wrap items-start items-end space-x-1  space-y-1 text-sm">
           {technologies &&
