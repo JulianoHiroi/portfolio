@@ -34,8 +34,8 @@ export default function Home() {
         '  lg flex w-full flex-col items-center justify-center lg:flex-row'
       }
     >
-      <div className=" flex w-full flex-col items-center justify-start space-y-5 pl-5 lg:h-3/4 lg:w-1/2">
-        <div className=" flex  flex-col items-center justify-center">
+      <div className=" flex w-full flex-col items-center justify-start space-y-5 md:pl-5 lg:h-3/4 lg:w-1/2">
+        <div className=" mt-12  flex flex-col items-center justify-center sm:ml-5 lg:mt-0">
           <Image
             src={FotoPerfil}
             width={150}
@@ -44,20 +44,23 @@ export default function Home() {
             className="rounded-full"
           />
           <h1
-            className={interTitle.className + ' mb-5 text-6xl tracking-tight'}
+            className={
+              interTitle.className +
+              '  mb-5 text-5xl tracking-tight sm:text-6xl'
+            }
           >
             Juliano Hiroi
           </h1>
-          <div className="mb-12">
+          <div className="ml-2 sm:ml-0">
             <h2 className=" mb-5 mt-5 w-full text-2xl font-bold tracking-tight">
               Desenvolvedor Full Stack Web
             </h2>
-            <p className="w-4/5 text-lg text-gray-500">
+            <p className="w-11/12 text-lg text-gray-500 sm:w-4/5">
               Desenvolvo sites e aplicações web com foco em <b>usabilidade</b> e{' '}
               <b>performance</b>.
             </p>
           </div>
-          <div className=" flex items-center space-x-5 text-xl">
+          <div className=" mt-12 hidden items-center space-x-5 text-xl lg:flex">
             <ButtonHoverBar
               scrollToSection={scrollToSection}
               text="Sobre Mim"
@@ -104,8 +107,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className=" md: h-screen w-full lg:w-1/2 lg:overflow-y-auto">
-        <div className="divMaster">
+      <div className=" md: flex h-screen w-full items-start justify-center lg:w-1/2 lg:justify-start lg:overflow-y-auto">
+        <div className="divMaster w-11/12">
           <div className="pt-24" id="Sobre">
             <p className="about-text  indent-8">
               Olá, eu sou Juliano Hiroi, um desenvolvedor web full stack.
@@ -116,7 +119,7 @@ export default function Home() {
               pela área e busco me aprimorar mnas diversas áreas de programação.
             </p>
           </div>
-          <h1 className="mb-10 pl-36 pt-10 text-4xl" id="Experiência">
+          <h1 className="mb-10 pt-10 text-4xl sm:pl-36" id="Experiência">
             Experiência
           </h1>
           <div className="flex  flex-col space-y-10">
@@ -192,7 +195,7 @@ export default function Home() {
             </EventWork>
           </div>
           <div>
-            <h1 className=" mb-5 pl-36 pt-10 text-4xl" id="Projetos">
+            <h1 className=" mb-7 pt-10 text-4xl sm:pl-36" id="Projetos">
               Projetos
             </h1>
             <ProjectCard
@@ -241,7 +244,7 @@ export default function Home() {
               </p>
             </ProjectCard>
           </div>
-          <p className="mt-10 h-20 w-5/6 indent-8 text-sm text-gray-600">
+          <p className="mt-10 h-20 indent-8 text-sm text-gray-600 lg:w-5/6">
             Esse Portfólio foi construído com{' '}
             <b className="text-gray-400">NextJs</b> e{' '}
             <b className="text-gray-400">TailwindCSS</b>. O seu layout foi

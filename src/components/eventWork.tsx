@@ -19,9 +19,9 @@ export default function EventWork({
   Tecnologias,
 }: EventWorkProps) {
   return (
-    <div className="flex space-x-5 ">
+    <div className="flex flex-col items-start sm:flex-row  sm:items-stretch sm:justify-normal sm:space-x-5 ">
       <DateCalender start={dateStart} end={dateEnd} />
-      <div>
+      <div className="mt-3 sm:mt-0">
         <h2 className="pb-0 text-2xl">{title}</h2>
         <h3>{Role}</h3>
         {children}

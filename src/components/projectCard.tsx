@@ -25,9 +25,13 @@ export default function ProjectCard({
   return (
     <div
       onClick={handleOnClick}
-      className="lg:blocks flex w-full cursor-pointer  space-x-3 rounded-md p-5 hover:bg-gray-800 hover:bg-opacity-40 "
+      className="lg:blocks mb-5 flex w-full cursor-pointer flex-col-reverse rounded-md hover:bg-gray-800  hover:bg-opacity-40 sm:mb-0 sm:flex-row sm:space-x-3 sm:p-5 "
     >
-      <Image className="img mr-3 rounded-lg" src={imgScreenshot} alt={link} />
+      <Image
+        className="img ml-3 mt-5 rounded-lg sm:ml-0 sm:mr-3 sm:mt-0"
+        src={imgScreenshot}
+        alt={link}
+      />
       <div className="boardProject flex flex-col">
         <div className="relative flex w-fit">
           <h2 className="titleProject mb-4 text-2xl">{title}</h2>
