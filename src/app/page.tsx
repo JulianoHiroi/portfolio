@@ -28,16 +28,21 @@ export default function Home() {
   }
 
   return (
-    <main className={inter.className + ' flex h-screen w-full items-center '}>
-      <div className="flex h-3/4 w-1/2 flex-col items-center justify-start space-y-5 pl-32 ">
-        <Image
-          src={FotoPerfil}
-          width={150}
-          height={150}
-          alt="Foto de Juliano"
-          className="rounded-full"
-        />
-        <div className=" flex  flex-col items-center justify-start">
+    <main
+      className={
+        inter.className +
+        '  lg flex w-full items-center md:flex-col xl:flex-row'
+      }
+    >
+      <div className=" flex h-3/4 w-1/2 flex-col items-center justify-start space-y-5 pl-32 ">
+        <div className=" flex  flex-col items-center justify-center">
+          <Image
+            src={FotoPerfil}
+            width={150}
+            height={150}
+            alt="Foto de Juliano"
+            className="rounded-full"
+          />
           <h1
             className={interTitle.className + ' mb-5 text-6xl tracking-tight'}
           >
@@ -49,11 +54,10 @@ export default function Home() {
             </h2>
             <p className="w-4/5 text-lg text-gray-500">
               Desenvolvo sites e aplicações web com foco em <b>usabilidade</b> e{' '}
-              <b>performance</b>. Estou sempre em busca de novos desafios e
-              oportunidades para aprimorar minhas habilidades.
+              <b>performance</b>.
             </p>
           </div>
-          <div className="mt-5 flex items-center space-x-5 text-xl">
+          <div className=" flex items-center space-x-5 text-xl">
             <ButtonHoverBar
               scrollToSection={scrollToSection}
               text="Sobre Mim"
@@ -100,7 +104,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="scrollable h-screen w-1/2  overflow-hidden overflow-y-auto overflow-x-hidden">
+      <div className="scrollable md: h-screen  w-1/2 lg:overflow-y-auto">
         <div className="divMaster">
           <div className="pt-24" id="Sobre">
             <p className="about-text  indent-8">
