@@ -31,10 +31,10 @@ export default function Home() {
     <main
       className={
         inter.className +
-        '  lg flex w-full items-center md:flex-col xl:flex-row'
+        '  lg flex w-full flex-col items-center justify-center lg:flex-row'
       }
     >
-      <div className=" flex h-3/4 w-1/2 flex-col items-center justify-start space-y-5 pl-32 ">
+      <div className=" flex w-full flex-col items-center justify-start space-y-5 pl-5 lg:h-3/4 lg:w-1/2">
         <div className=" flex  flex-col items-center justify-center">
           <Image
             src={FotoPerfil}
@@ -104,7 +104,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="scrollable md: h-screen  w-1/2 lg:overflow-y-auto">
+      <div className=" md: h-screen w-full lg:w-1/2 lg:overflow-y-auto">
         <div className="divMaster">
           <div className="pt-24" id="Sobre">
             <p className="about-text  indent-8">

@@ -62,11 +62,6 @@ body {
 }
 
 /* Adicionar rolagem apenas para elementos específicos (por exemplo, uma div com uma classe "scrollable") */
-.scrollable {
-  width: 48%;
-
-}
-
 .divMaster {
   max-width: 600px;
   width: 100%;
