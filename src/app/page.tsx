@@ -116,7 +116,7 @@ export default function Home() {
               Tecnologica Federal do Paraná. Meu interesse por programação
               começou em 2019, quando comecei a estudar <b>Linguagem C</b> em
               uma máteria do técnico em Eletrônica. Desde então, me apaixonei
-              pela área e busco me aprimorar mnas diversas áreas de programação.
+              pela área e busco me aprimorar nas diversas áreas de programação.
             </p>
           </div>
           <h1 className="mb-10 pt-10 text-4xl sm:pl-36" id="Experiência">
@@ -217,9 +217,8 @@ export default function Home() {
                 O projeta abrange todas as etapas do processo de{' '}
                 <b>autenticação</b>, desde o registro até{' '}
                 <b>a recuperação de senha via e-mail</b>. No desenvolvimento
-                foram aplicados conceitos de
-                <b>segurança</b>, destacando-se a <b>encriptação</b> de dados
-                sensíveis.
+                foram aplicados conceitos de <b>segurança</b>, destacando-se a{' '}
+                <b>encriptação</b> de dados sensíveis.
               </p>
             </ProjectCard>
             <ProjectCard
@@ -244,7 +243,7 @@ export default function Home() {
               </p>
             </ProjectCard>
           </div>
-          <p className="mt-10 h-20 indent-8 text-sm text-gray-600 lg:w-5/6">
+          <p className="mb-6 mt-10 h-20 indent-8 text-sm text-gray-600 sm:mb-0 lg:w-5/6">
             Esse Portfólio foi construído com{' '}
             <b className="text-gray-400">NextJs</b> e{' '}
             <b className="text-gray-400">TailwindCSS</b>. O seu layout foi
