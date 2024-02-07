@@ -16,7 +16,7 @@ export default function ButtonHoverBar({
   }
 
   return (
-    <div className="button-bar">
+    <div className="button-bar hover:text-gray-300">
       <button onClick={HandleOnClick} className="">
         {text}
       </button>

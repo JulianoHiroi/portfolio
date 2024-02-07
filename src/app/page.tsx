@@ -2,6 +2,9 @@
 
 import './globals.css'
 
+import fs from 'fs'
+import path from 'path'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
@@ -9,21 +12,53 @@ import { Inter } from 'next/font/google'
 import FotoPerfil from '../assets/FotoPerfil.jpg'
 import UserSystemScreen from '@/assets/usersystem_tela.png'
 import TaskToDoScreen from '@/assets/tasktodo_tela.png'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa'
 import { RiInstagramFill } from 'react-icons/ri'
 
 import ButtonHoverBar from '../components/buttonHoverBar'
 import EventWork from '@/components/eventWork'
 import ProjectCard from '@/components/projectCard'
+import { useEffect, useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'], weight: '500' })
 const interTitle = Inter({ subsets: ['latin'], weight: '700' })
 
 export default function Home() {
+  const [pdfData, setPdfData] = useState('')
+
+  useEffect(() => {
+    const fetchPdfData = async () => {
+      try {
+        // Faz a requisição para obter a string base64 do arquivo de texto
+
+        const response = await fetch('/Curriculo_base64.txt')
+        const base64String = await response.text()
+        setPdfData(base64String)
+      } catch (error) {
+        console.error('Erro ao obter a string base64 do arquivo:', error)
+      }
+    }
+
+    fetchPdfData()
+  }, [])
   function scrollToSection(sectionId: string) {
     const section = document.getElementById(sectionId)
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const handleDownload = () => {
+    try {
+      // Criar um link temporário para download
+      const link = document.createElement('a')
+      link.href = `data:application/pdf;base64,${pdfData}`
+      link.download = 'Curriculo_Juliano_Hiroi.pdf'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    } catch (error) {
+      console.error('Erro ao baixar o arquivo PDF:', error)
     }
   }
 
@@ -55,6 +90,7 @@ export default function Home() {
             <h2 className=" mb-5 mt-5 w-full text-2xl font-bold tracking-tight">
               Desenvolvedor Full Stack Web
             </h2>
+
             <p className="w-11/12 text-lg text-gray-500 sm:w-4/5">
               Desenvolvo sites e aplicações web com foco em <b>usabilidade</b> e{' '}
               <b>performance</b>.
@@ -72,13 +108,14 @@ export default function Home() {
               text="Experiência"
               id="Experiência"
             />{' '}
-            <div className="h-2 w-2 rounded-full bg-white"></div>
+            <div className="h-2 w-2 rounded-full bg-white "></div>
             <ButtonHoverBar
               scrollToSection={scrollToSection}
               text="Projetos"
               id="Projetos"
             />{' '}
           </div>
+
           <div className="mt-10 flex space-x-10">
             <Link href="https://github.com/JulianoHiroi">
               {' '}
@@ -105,6 +142,12 @@ export default function Home() {
               />{' '}
             </Link>
           </div>
+          <button onClick={handleDownload} className=" button-bar mt-5">
+            <div className="flex space-x-2 hover:text-gray-300">
+              <p className="text-xl">Currículo</p> <FaFileDownload size={20} />
+            </div>
+            <span className="button-bar-span"></span>
+          </button>
         </div>
       </div>
       <div className=" md: flex h-screen w-full items-start justify-center lg:w-1/2 lg:justify-start lg:overflow-y-auto">
