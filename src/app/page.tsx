@@ -154,12 +154,12 @@ export default function Home() {
         <div className="divMaster w-11/12">
           <div className="pt-24" id="Sobre">
             <p className="about-text  indent-8">
-              Olá, eu sou Juliano Hiroi, um desenvolvedor web full stack.
-              Atualmente estou cursando Sistemas de Informação na Universidade
-              Tecnologica Federal do Paraná. Meu interesse por programação
-              começou em 2019, quando comecei a estudar <b>Linguagem C</b> em
-              uma máteria do técnico em Eletrônica. Desde então, me apaixonei
-              pela área e busco me aprimorar nas diversas áreas de programação.
+              Sou Juliano Hiroi, desenvolvedor web full stack. Atualmente curso
+              Sistemas de Informação na Universidade Tecnologica Federal do
+              Paraná. Meu interesse por programação começou em 2019, quando
+              comecei a estudar <b>Linguagem C</b> durante meu técnico em
+              Eletrônica. Desde então, me apaixonei pela área e busco me
+              aprimorar nas diversas áreas de programação.
             </p>
           </div>
           <h1 className="mb-10 pt-10 text-4xl sm:pl-36" id="Experiência">
