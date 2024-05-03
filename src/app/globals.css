@@ -44,6 +44,11 @@ body {
   }
 }
 
+.imagemBackground {
+  background-image: url("../assets/backgroundImage.jpg");
+  background-size: cover;
+}
+
 .img {
   width: 200px;
 
@@ -166,10 +171,15 @@ body {
 }
 
 .fadeInElements {
-  margin: 1rem 0;
-  transform: translateY(20px);
-  opacity: 0;
+
+
+
   transition: 1s ease;
+
+  @media screen and (min-width: 1024px) {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
 }
 

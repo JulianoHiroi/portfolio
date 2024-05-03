@@ -91,12 +91,10 @@ export default function Home() {
     <main
       className={
         inter.className +
-        '  lg flex w-full flex-col items-center justify-center lg:flex-row'
+        ' relative flex h-full flex-col items-center justify-center lg:flex-row'
       }
     >
-      <div className="absolute h-full w-full overflow-hidden opacity-10">
-        <Image src={BackGroundImage} alt=" Imagem Background" />
-      </div>
+      <div className="imagemBackground  absolute hidden h-[100%] w-full overflow-hidden opacity-10 md:flex"></div>
       <div className=" flex w-full flex-col items-center justify-start space-y-5 md:pl-5 lg:h-3/4 lg:w-1/2">
         <div className=" animationFadeIn  mt-12 flex flex-col items-center justify-center sm:ml-5 lg:mt-0">
           <Image
@@ -114,7 +112,7 @@ export default function Home() {
           >
             Juliano Hiroi
           </h1>
-          <div className="ml-2 sm:ml-0">
+          <div className="ml-6 sm:ml-0">
             <h2 className=" mb-5 mt-5 w-full text-2xl font-bold tracking-tight">
               Desenvolvedor Full Stack Web
             </h2>
