@@ -25,7 +25,7 @@ export default function ProjectCard({
   return (
     <div
       onClick={handleOnClick}
-      className="lg:blocks mb-5 flex w-full cursor-pointer flex-col-reverse rounded-md hover:bg-gray-800  hover:bg-opacity-40 sm:mb-0 sm:flex-row sm:space-x-3 sm:p-5 "
+      className="lg:blocks fadeInElements mb-5 flex w-full cursor-pointer flex-col-reverse rounded-md  hover:bg-gray-800 hover:bg-opacity-40 sm:mb-0 sm:flex-row sm:space-x-3 sm:p-5"
     >
       <Image
         className="img ml-3 mt-5 rounded-lg sm:ml-0 sm:mr-3 sm:mt-0"

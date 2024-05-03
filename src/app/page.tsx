@@ -2,12 +2,10 @@
 
 import './globals.css'
 
-import fs from 'fs'
-import path from 'path'
-
 import Link from 'next/link'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import BackGroundImage from '../assets/backgroundImage.jpg'
 
 import FotoPerfil from '../assets/FotoPerfil.jpg'
 import UserSystemScreen from '@/assets/usersystem_tela.png'
@@ -41,6 +39,33 @@ export default function Home() {
 
     fetchPdfData()
   }, [])
+  useEffect(() => {
+    const fadeInElements = document.querySelectorAll('.fadeInElements')
+    function isInView(element: Element) {
+      const rect = element.getBoundingClientRect()
+      return (
+        rect.bottom > 0 &&
+        rect.top <
+          (window.innerHeight - 150 ||
+            document.documentElement.clientHeight - 150)
+      )
+    }
+    fadeInElements.forEach((element) => {
+      if (isInView(element)) {
+        element.classList.add('fadeInElements--visible')
+      }
+    })
+    const sectionElement = document.querySelector('.sectionElement')
+    if (!sectionElement) return
+    sectionElement.addEventListener('scroll', () => {
+      fadeInElements.forEach((element) => {
+        if (isInView(element)) {
+          element.classList.add('fadeInElements--visible')
+        }
+      })
+    })
+  }, [])
+
   function scrollToSection(sectionId: string) {
     const section = document.getElementById(sectionId)
     if (section) {
@@ -69,8 +94,11 @@ export default function Home() {
         '  lg flex w-full flex-col items-center justify-center lg:flex-row'
       }
     >
+      <div className="absolute h-full w-full overflow-hidden opacity-10">
+        <Image src={BackGroundImage} alt=" Imagem Background" />
+      </div>
       <div className=" flex w-full flex-col items-center justify-start space-y-5 md:pl-5 lg:h-3/4 lg:w-1/2">
-        <div className=" mt-12  flex flex-col items-center justify-center sm:ml-5 lg:mt-0">
+        <div className=" animationFadeIn  mt-12 flex flex-col items-center justify-center sm:ml-5 lg:mt-0">
           <Image
             src={FotoPerfil}
             width={150}
@@ -150,10 +178,10 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className=" md: flex h-screen w-full items-start justify-center lg:w-1/2 lg:justify-start lg:overflow-y-auto">
-        <div className="divMaster w-11/12">
+      <div className="sectionElement flex h-screen w-full items-start justify-center pb-24 lg:w-1/2 lg:justify-start lg:overflow-y-auto">
+        <div className="divMaster animationFadeLeft w-11/12">
           <div className="pt-24" id="Sobre">
-            <p className="about-text  indent-8">
+            <p className="about-text   indent-8">
               Sou Juliano Hiroi, desenvolvedor web full stack. Atualmente curso
               Sistemas de Informação na Universidade Tecnologica Federal do
               Paraná. Meu interesse por programação começou em 2019, quando
@@ -162,7 +190,7 @@ export default function Home() {
               aprimorar nas diversas áreas de programação.
             </p>
           </div>
-          <h1 className="mb-10 pt-10 text-4xl sm:pl-36" id="Experiência">
+          <h1 className=" mb-10 pt-10 text-4xl sm:pl-36" id="Experiência">
             Experiência
           </h1>
           <div className="flex  flex-col space-y-10">
@@ -238,7 +266,10 @@ export default function Home() {
             </EventWork>
           </div>
           <div>
-            <h1 className=" mb-7 pt-10 text-4xl sm:pl-36" id="Projetos">
+            <h1
+              className="fadeInElements mb-7 pt-10 text-4xl sm:pl-36"
+              id="Projetos "
+            >
               Projetos
             </h1>
             <ProjectCard
@@ -286,7 +317,7 @@ export default function Home() {
               </p>
             </ProjectCard>
           </div>
-          <p className="mb-6 mt-10 h-20 indent-8 text-sm text-gray-600 sm:mb-0 lg:w-5/6">
+          <p className=" fadeInElements mb-6 mt-10 h-20 indent-8 text-sm text-gray-600 sm:mb-0 lg:w-5/6">
             Esse Portfólio foi construído com{' '}
             <b className="text-gray-400">NextJs</b> e{' '}
             <b className="text-gray-400">TailwindCSS</b>. O seu layout foi
